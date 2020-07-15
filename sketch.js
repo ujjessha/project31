@@ -5,9 +5,9 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var ground;
-var particles={};
-var divisions={};
-var plinko={};
+var particles={particle};
+var divisions={division};
+var plinko={plinko};
 var divisionHeight=300;
 
 
@@ -19,7 +19,7 @@ function setup() {
 
  ground=new Ground(240,760,480,20);
  for (var k=0; k<=width; k=k+80){
-  divisions.push(new Division(k,height-divisionHeight/2,10,divisionHeight));
+  division.push(new Division(k,height-divisionHeight/2,10,divisionHeight));
 }
 
 for(var f=40; j<=width; j=j+50){
@@ -31,7 +31,7 @@ for(var f=15; j<=width-10; j=j+50){
 }
 
 if(frameCount%60===0){
-  particles.push(new particle(random(width/2-10,width/2+10),10,10));
+  particle.push(new particle(random(width/2-10,width/2+10),10,10));
 }
  
 }
@@ -41,14 +41,14 @@ function draw() {
   
   ground.display();
  for(k=0; k<divisions.lenght; k++){
-   divisions[k].display();
+   division[k].display();
  }
 
  for(f=0; f<plinko.lenght; f++){
   plinko[f].display();
 }
 for(j=0; j<particles.lenght; j++){
-  particles[j].display();
+  particle[j].display();
 }
 
   drawSprites();
