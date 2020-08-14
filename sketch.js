@@ -5,9 +5,9 @@ const Constraint = Matter.Constraint;
 
 var engine, world;
 var ground;
-var particles={particle};
-var divisions={division};
-var plinko={plinko};
+var particles=[];
+var divisions=[];
+var plinko=[];
 var divisionHeight=300;
 
 
